@@ -4,5 +4,14 @@ img {
 }
 
 #zero {
-    width: 200px
+    width: 200px;
+}
+
+.Row {
+    display: inline-flex;
+    flex-direction: row; 
+}
+
+#topbar {
+    width: 400px
 }

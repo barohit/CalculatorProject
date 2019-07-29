@@ -27,34 +27,34 @@ class Button extends Component {
     calculateValue = () => {
         switch (this.props.val) {
             case "0":
-                this.setState({imgloc: Zero, id: "zero"});
+                this.setState({imgloc: Zero, id: "zero", pressButton: this.props.pressButton});
                 break;
             case "1":
-                this.setState({imgloc: One});
+                this.setState({imgloc: One, pressButton: "1"});
                 break;
             case "2":
-                this.setState({imgloc: Two});
+                this.setState({imgloc: Two, pressButton: this.props.pressButton});
                 break; 
             case "3":
-                this.setState({imgloc: Three});
+                this.setState({imgloc: Three, pressButton: this.props.pressButton});
                 break;
             case "4":
-                this.setState({imgloc: Four});
+                this.setState({imgloc: Four, pressButton: this.props.pressButton});
                 break;
             case "5":
-                this.setState({imgloc: Five});
+                this.setState({imgloc: Five, pressButton: this.props.pressButton});
                 break;
             case "6":
-                this.setState({imgloc: Six});
+                this.setState({imgloc: Six, pressButton: this.props.pressButton});
                 break;
             case "7":
-                this.setState({imgloc: Seven});
+                this.setState({imgloc: Seven, pressButton: this.props.pressButton});
                 break;
             case "8":
-                this.setState({imgloc: Eight});
+                this.setState({imgloc: Eight, pressButton: this.props.pressButton});
                 break;
             case "9":
-                this.setState({imgloc: Nine});
+                this.setState({imgloc: Nine, pressButton: this.props.pressButton});
                 break;
             case "x":
                 this.setState({imgloc: Multiply});
@@ -91,7 +91,7 @@ class Button extends Component {
         
         return (
             <div className="Button" onLoad = {() => this.calculateValue()}>
-                <img src={this.state.imgloc} id={this.state.id} alt={this.state.imgloc} />
+                <img src={this.state.imgloc} id={this.state.id} alt={this.state.imgloc} onclick={() => {this.props.pressButton(this.state.pressButton)}} />
             </div>
         )
     }
